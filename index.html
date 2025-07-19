@@ -3,19 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Design Executive Agent</title>
+  <title>Claude Chat UI</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="header">
-    <h1>🎨 Design Executive AI</h1>
-    <button id="toggleTheme">🌓</button>
-  </div>
-  <div id="chatWindow"></div>
-  <div id="inputArea">
-    <textarea id="userInput" placeholder="Ask your Design Executive AI..."></textarea>
-    <button id="sendBtn">Send</button>
-  </div>
+  <header>
+    <h1>Claude Chat UI</h1>
+    <select id="model-selector">
+      <option value="claude-3-opus">Claude 3.5</option>
+      <option value="gpt-4">GPT-4</option>
+    </select>
+    <select id="personality-selector">
+      <option value="design-coach">Design Coach</option>
+      <option value="ux-pm">UX PM</option>
+      <option value="founder">Founder</option>
+    </select>
+  </header>
+
+  <main id="chat-container"></main>
+
+  <footer>
+    <div id="input-container">
+      <input type="text" id="user-input" placeholder="Type your message..." />
+      <button id="send-btn">➤</button>
+      <button id="voice-btn">🎙️</button>
+      <input type="file" id="image-upload" accept="image/*"/>
+      <button id="clear-chat-btn">🗑 Clear</button>
+      <button id="export-pdf-btn">📄 PDF</button>
+      <button id="share-btn">🔗 Share</button>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
